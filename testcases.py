@@ -22,12 +22,15 @@ class convertorTest(unittest.TestCase):
         self.assertEqual(convert_ipv4('172.168 . 5.1'), 2896692481, 'test fail')
 
     def test_success_space_3(self):
-        self.assertEqual(convert_ipv4('172.     168.5.1'), 2896692481, 'test fail')
+        self.assertEqual(convert_ipv4('172 .168 . 5 . 1'), 2896692481, 'test fail')
 
     def test_success_space_4(self):
-        self.assertEqual(convert_ipv4('172      .168.5.1'), 2896692481, 'test fail')
+        self.assertEqual(convert_ipv4('172.     168.5.1'), 2896692481, 'test fail')
 
     def test_success_space_5(self):
+        self.assertEqual(convert_ipv4('172      .168.5.1'), 2896692481, 'test fail')
+
+    def test_success_space_6(self):
         self.assertEqual(convert_ipv4('172      .          168.5.1'), 2896692481, 'test fail')
 
     def test_exception_wrong_spaces_1(self):
