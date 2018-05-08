@@ -18,7 +18,7 @@ def convert_ipv4(sAddress):
             if str == '':
                 raise NameError('Each address number should not be null')
             if len(str) > 3:
-                raise NameError('Each address number should not be 3-digits')
+                raise NameError('Each address number should be 3-digits')
             iStr = int(str)
             if iStr > 255 :
                 raise NameError('Each address number should in [0,255]')
