@@ -52,7 +52,7 @@ class convertorTest(unittest.TestCase):
         self.assertRaisesRegexp(NameError, 'Each number should in \[0-9\]', convert_ipv4, '-0.168.5.1')
 
     def test_exception_wrong_char_4(self):
-        self.assertRaisesRegexp(NameError, 'Each address number should not be 3-digits', convert_ipv4, '0000.168.5.1')
+        self.assertRaisesRegexp(NameError, 'Each address number should be 3-digits', convert_ipv4, '0000.168.5.1')
 
     def test_exception_wrong_char_5(self):
         self.assertRaisesRegexp(NameError, 'Each address number should in \[0,255\]', convert_ipv4, '256.168.5.1')
